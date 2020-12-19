@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet"> 
+	<title>Document</title>
+</head>
+<body>
+<script>
+		function dayFunc() {
+				var box1 = document.getElementById("bikeCost");
+				var box2 = document.getElementById("BSCost");
+				var box3 = document.getElementById("PlusCost");
+				box1.innerHTML = "200";
+				box2.innerHTML = "300";
+				box3.innerHTML = "400";
+		}		
+		function monthFunc() {
+				var box1 = document.getElementById("bikeCost");
+				var box2 = document.getElementById("BSCost");
+				var box3 = document.getElementById("PlusCost");
+				box1.innerHTML = "400";
+				box2.innerHTML = "600";
+				box3.innerHTML = "800";
+		}
+		function seasonFunc() {
+				var box1 = document.getElementById("bikeCost");
+				var box2 = document.getElementById("BSCost");
+				var box3 = document.getElementById("PlusCost");
+				box1.innerHTML = "600";
+				box2.innerHTML = "800";
+				box3.innerHTML = "900";
+		}
+		   var index = 0;
+			var links = new Array (
+            "images/owo.jpg", 
+            "images/bike2.jpg", 
+            "images/bike3.png",
+			"images/bike4.jpg",
+			"images/bike5.jpg"
+			); 
+  
+		function slide(v) {
+			var element = document.getElementById("pic");
+			index += 1 * v;
+            
+			if(index > links.length - 1) index = 0;
+			else if(index < 0) index = links.length - 1;
+			element.src = links[index];
+			}
+		(function main() {
+				  document.addEventListener('DOMContentLoaded', DOMContentLoaded);
+				 
+				  function DOMContentLoaded() {
+						var buttonNode = document.querySelector('.js-show-form');
+					buttonNode.addEventListener('click', showForm);
+				  }
+					
+				  function showForm() {
+					var node = document.querySelector('.login_show');
+					node.classList.remove('hidden');
+				  }
+				})();
+		function myalert() { 
+            alert("Order done!"); 
+        } 
+		</script>
+<div class="container">
+	<header id="head" class="header">
+				<div class=" header_logo">Bike4Rent</div>
+				<nav class="nav">
+					<div class="button_back">
+						<a class="text_nav" href="#head">Home</a>
+					</div>
+					<div class="button_back">
+						<a class="text_nav" href="#cost">Prices</a></div>
+					<div class="button_back">
+						<a class="text_nav" href="#map">Bike map</a>
+					</div>
+					<div style="background:#0075FF; float:right" class="button_back">
+						<button class="js-show-form">Profile</button>
+					</div>
+				</nav>
+				<form class="login_show hidden">
+						<table>
+							<tbody>
+								<tr>
+									<td><input type="text" name="Email" placeholder="Email"/></td>
+								</tr>
+								<tr>
+									<td><input type="password" name="password" placeholder="Password" /></td>
+								</tr>
+							</tbody>
+						</table>			  	 
+						<button  class="login_button">Login</button>
+						<button class="login_button">Register</button>
+				</form>
+	</header>
+	<div class ="first_window">
+		<img id="pic" src="images/owo.jpg" alt=""> 
+			<a href="#" onclick="slide(-1)" style="float:left; position:relative; z-index:3; top:-300px;height:100px;width:100px"><img alt="" src="images/prev.png"></a>
+			<a href="#" onclick="slide(1)" style="float:right;position:relative; z-index:3; top:-300px;height:100px;width:100px"><img alt="" src="images/next.png"></a>
+			<div class="text_box">
+				<h1 style="color:black" class="text">Use time efficiently</h1>
+				<p style="color:#656565; top:-45px;" class="text">Bicycle - one of most efficient way of travelling in big modern city, it isn't afraid of traffic jams and travelling price is much cheaper than travelling by auto.</p>
+			</div>
+	</div>
+	<div style="background-color:#fff; top:-140px" class="first_window" id="map"  >
+		<p  class="text1" style="font-size:65px; width:1000px"> Find nearest bicycle to you</p>
+		<p class="text1" style="color:#0075FF; width:1000px"> Open the map and check avaiable bike station in your region</p>
+		<iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Afa216bc4a0ab09302fa4f08fdb2a69fc90681e103f8f3d9d869d0d7149f5f1d4&amp;source=constructor"  width="1440" height="750" ></iframe>
+	</div>
+	<div class="first_window" style="top:-210px" id="cost">
+		<div class="price_top">
+		<p >How much it costs?</p>
+		<p style="color:#0075FF">Choose an period to see</p></div>
+		<table class="table" style="border-spacing:10px ">
+		<tr>
+		<th>
+			<button class="b_style" onclick="dayFunc()">Day
+			</button>
+		</th>
+		<th>
+			<button class="b_style" onclick="monthFunc()">Month</button>
+		</th>
+		<th>
+			<button class="b_style" onclick="seasonFunc()">Season</button>
+		</th>
+		</tr>
+		</table>
+		<table style="border-spacing:85px">
+		<tr>
+		<th>
+			<div class="frame">
+				<div class="image_in_frame">
+					<img alt="" src="images/bike.png">
+				</div>
+				<p style="margin:auto; font-size:45px">Only bike</p>
+				<div id="bikeCost" style="font-size:60px; padding-top:100px">200</div>
+			</div>
+		</th>
+		<th>
+			<div class="frame">
+				<div class="image_in_frame">
+				<img alt="" src="images/bike_skate.png">
+				</div>
+				<p style="margin:auto; font-size:45px">Bike and skate</p>
+				<div id="BSCost" style="font-size:60px;padding-top:100px">200</div>
+			</div>
+		</th>
+		<th>
+			<div class="frame">
+				<div class="image_in_frame">
+				<img alt="" src="images/bike_skate_plus.png">
+				</div>
+				<p style="margin:auto; font-size:45px">Plus packet</p>
+				<div id="PlusCost" style="font-size:60px; padding-top:100px">200</div>
+			</div>
+		</th>
+		</tr>
+		</table>
+	</div>
+	<div class="first_window" style="top:-280px">
+		<div class="price_top"><p>Order one today</p></div>
+		<table class="table_last">
+			<tbody>
+				<tr>
+					<td>
+						<p class="text1" style="color:#0075FF; font-size:40px">Input your name</p>
+						
+					</td>
+					<td> 
+						<input type="text" name="Name" placeholder="Name" size="60">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text1" style="color:#0075FF; font-size:40px"> Input your number</p>
+					</td>
+					<td>
+						<input type="text" name="Number" placeholder="Number" size="60">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text1" style="color:#0075FF; font-size:40px"> Input your e-mail</p>
+					</td>
+					<td>
+						<input type="text" name="Email" placeholder="Email" size="60" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="text1" style="font-size:40px"> Choose an date to order</p>
+					</td>
+					<td>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="calendar" style="margin:0 60px">
+				<div class="month">      
+			  <ul>
+				<li class="prev">❮</li>
+				<li class="next">❯</li>
+				<li>
+				  August<br>
+				  <span style="font-size:18px">2017</span>
+				</li>
+			  </ul>
+			</div>
+
+			<ul class="weekdays">
+			  <li>Mo</li>
+			  <li>Tu</li>
+			  <li>We</li>
+			  <li>Th</li>
+			  <li>Fr</li>
+			  <li>Sa</li>
+			  <li>Su</li>
+			</ul>
+
+			<ul class="days">  
+			  <li>1</li>
+			  <li>2</li>
+			  <li>3</li>
+			  <li>4</li>
+			  <li>5</li>
+			  <li>6</li>
+			  <li>7</li>
+			  <li>8</li>
+			  <li>9</li>
+			  <li><span class="active">10</span></li>
+			  <li>11</li>
+			  <li>12</li>
+			  <li>13</li>
+			  <li>14</li>
+			  <li>15</li>
+			  <li>16</li>
+			  <li>17</li>
+			  <li>18</li>
+			  <li>19</li>
+			  <li>20</li>
+			  <li>21</li>
+			  <li>22</li>
+			  <li>23</li>
+			  <li>24</li>
+			  <li>25</li>
+			  <li>26</li>
+			  <li>27</li>
+			  <li>28</li>
+			  <li>29</li>
+			  <li>30</li>
+			  <li>31</li>
+			</ul>
+			</div>
+			<div class="button_back" style="top:-150px; left:700px">
+				<a class="text_nav" style="margin:0 auto" onclick="myalert()">
+				Order
+				</a>
+			</div>
+		</div>
+		<footer class="footer" style="top:-355px">
+			<h1 class ="footer_pizzario">Bike4Rent</h1>
+			<h1 class ="footer_text">Bike rent | Telephone +78005553535 | bike4rent@gmail.com</h1>
+			<h1 class ="reserved">2020 © Bike4rent. All rights reserved.</h1>
+			<h1 class="text_maps">Contact us:</h1>
+			<h1 class="text_maps">454135,Chelyabinsk,</h1>
+			<h1 class="text_maps">SUSU</h1>
+	</footer>
+ </div>
+</body>
+</html>
